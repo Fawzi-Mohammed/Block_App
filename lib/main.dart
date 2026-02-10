@@ -1,4 +1,4 @@
-import 'package:block_app/controllers/cubit/counter_cubit.dart';
+import 'package:block_app/controllers/Bloc/counter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => CounterCubit(),
+      create: (context) => CounterBloc(),
       child: MaterialApp(home: const MyHomePage(title: ' Counter app')),
     );
   }
@@ -30,7 +30,7 @@ class MyHomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
-            child: BlocBuilder<CounterCubit, CounterState>(
+            child: BlocBuilder<CounterBloc, CounterBlocState>(
               builder: (context, state) {
                 return Text(
                   '${state.counter}',
@@ -52,7 +52,7 @@ class MyHomePage extends StatelessWidget {
               ),
             ),
             onPressed: () {
-              context.read<CounterCubit>().increment();
+              context.read<CounterBloc>().add(IncrementEvent());
             },
             child: const Icon(Icons.add),
           ),
@@ -63,7 +63,7 @@ class MyHomePage extends StatelessWidget {
               ),
             ),
             onPressed: () {
-              context.read<CounterCubit>().decrement();
+              context.read<CounterBloc>().add(DecrementEvent());
             },
             child: const Icon(Icons.remove),
           ),

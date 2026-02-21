@@ -20,46 +20,7 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(title)),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            
-                child:  Text(
-                  'hi',
-                  style: Theme.of(context).textTheme.headlineLarge,
-                )
-          )
-          ,
-        ],
-      ),
-      floatingActionButton: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.zero,
-              ),
-            ),
-            onPressed: () {
-            },
-            child: const Icon(Icons.add),
-          ),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.zero,
-              ),
-            ),
-            onPressed: () {
-            },
-            child: const Icon(Icons.remove),
-          ),
-        ],
-      ),
+      
     );
   }
 }

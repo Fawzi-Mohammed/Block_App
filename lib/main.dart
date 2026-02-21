@@ -1,8 +1,6 @@
 import 'package:block_app/controllers/cubit/task_cubit.dart';
-import 'package:block_app/models/tasks_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:uuid/uuid.dart';
 
 void main() {
   runApp(const MyApp());

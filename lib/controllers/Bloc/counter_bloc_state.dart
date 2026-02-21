@@ -2,10 +2,12 @@ part of 'counter_bloc.dart';
 
 
 @immutable
-sealed class CounterBlocState {
+sealed class CounterBlocState extends Equatable {
   final int counter;
 
   const CounterBlocState({required this.counter});
+  @override
+  List<Object?> get props => [counter];
 }
 
 class CounterInit extends CounterBlocState {
